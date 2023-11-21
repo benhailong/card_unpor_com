@@ -1,0 +1,138 @@
+
+$color-huise:#7A8599;
+$color-blue:#165DFF;
+
+.up-flex{
+  display: flex;
+}
+.up-jc-sb{
+  justify-content: space-between;
+}
+
+
+.logo{
+  font-size: 16px;
+  color: $color-blue;
+  font-weight: bold;
+  text-align: center;
+  line-height: 54px;
+}
+.menu-title{
+  font-weight: bold;
+  color: $color-huise;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.menu-level{
+  color: $color-huise;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  .menu-level-li{
+    width: 70px;
+    font-size: 13px;
+    line-height: 24px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .menu-level-li:hover{
+    background: #E5EAF8;
+    color: #212121;
+  }
+  .action{
+    background: $color-blue;
+    color: #ffffff;
+  }
+  .action:hover{
+    background: $color-blue;
+    color: #ffffff;
+  }
+}
+.login{
+  background: #ffffff;
+  width: 300px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -170px;
+  top: 50%;
+  transform:translateY(-50%);
+  padding: 20px;
+  border-radius: 10px;
+}
+.login-fotter{
+  text-align: center;
+  width: 800px;
+  left: 50%;
+  margin-left: -400px;
+  position: absolute;
+  bottom: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  color: $color-huise;
+}
+.login_tab{
+  position: relative;
+  width: 64px;
+  font-size: 16px;
+  font-weight: bold;
+  color: $color-huise;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.login_tab_action{
+  color: #323335;
+  &::after {
+    content: ''; // 必须
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    top: 22px;
+    right: 0;
+    width: 30px;
+    height: 4px;
+    border-radius: 20px;
+    background-color: $color-blue;
+  }
+}
+//.login_tab_action::after {
+//  content: ''; // 必须
+//  position: absolute;
+//  left: 50%;
+//  margin-left: -15px;
+//  top: 22px;
+//  right: 0;
+//  width: 30px;
+//  height: 4px;
+//  border-radius: 20px;
+//  background-color: $color-blue;
+//}
+.login-title{
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+.login-xieyi{
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: 10px;
+  color: #7A8599;
+  a{
+    font-size: 12px;
+  }
+}
+.login-error-info{
+  line-height: 32px;
+  height: 32px;
+  font-size: 13px;
+  color: #E34949;
+}
+.login-register{
+  color: $color-huise;
+  font-size: 12px;
+  cursor: pointer;
+}

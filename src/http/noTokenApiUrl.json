@@ -1,0 +1,10 @@
+[
+  "/email/send",
+  "/sms/send",
+  "/captcha/create",
+  "/users/login",
+  "/users/register_email",
+  "/users/register_phone",
+  "/users/seekpwd_email",
+  "/users/seekpwd_phone"
+]
