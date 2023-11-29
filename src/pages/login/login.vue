@@ -52,7 +52,9 @@ import {sha256} from "js-sha256";
 // 调用pinia存储
 import {storeToRefs} from "pinia";
 import { userStore } from "@/stores/userStore";
+import { routerStore } from "@/stores/routerStore";
 let {userinfo,startTime} = storeToRefs(userStore());
+let {changeId} = storeToRefs(routerStore());
 
 const visible = ref(false)
 
@@ -103,7 +105,7 @@ const login = () => {
       let stime = new Date();
       startTime.value = stime.getTime();
       // 准备动态路由
-
+      changeId.value = 0;
       upTools.goPath("/home");
     } else {
       instance.$message.error(res.msg);

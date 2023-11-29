@@ -6,7 +6,7 @@
 
     <a-scrollbar style="height:calc(100vh - 54px) ;overflow: auto;">
       <div class="menu-title up-flex up-jc-sb" style="margin-bottom: 20px">
-        <div>
+        <div :style="{'color':changeId==0?'#165DFF':'#7A8599','marginTop': '10px'}" @click="changeMenu(0,'/home')">
 <!--          <icon-home /> 数据中心-->
           <svg-icon name="menu-home"  style="font-size: 16px;margin-top: -3px" /> 数据中心
         </div>
@@ -20,7 +20,7 @@
           <div><icon-right /></div>
         </div>
         <div class="menu-level up-flex up-jc-sb">
-          <div class="menu-level-li" v-for="(t,i) in item.children" @click="upTools.goPath(t.path)">{{t.title}}</div>
+          <div :class="['menu-level-li',{'action':changeId==t.id}]" v-for="(t,i) in item.children" @click="changeMenu(t.id,t.path)">{{t.title}}</div>
         </div>
       </template>
 
@@ -97,23 +97,13 @@ const {proxy: instance} = getCurrentInstance()
 import {storeToRefs} from "pinia";
 import { routerStore } from "@/stores/routerStore";
 import upTools from "@/utils/upTools.ts";
-let {menu} = storeToRefs(routerStore());
-/**
- * 根据用户所在的角色，找出所有的路由
- */
-// const getRoutesByRole = () => {
-//   instance.$http.users.getRoutesByRole()
-//       .then((res:any) => {
-//         // console.log(res);
-//         menu.value = res.data;
-//         routerList.addRoutes(res.data, router)
-//       }).catch( (err:any) => {
-//     console.log(err)
-//     // err ? instance.$message.error(err) : console.log(err)
-//   })
-// }
-//
-// getRoutesByRole();
+let {menu, changeId} = storeToRefs(routerStore());
+
+const changeMenu = (id:number,path:string) => {
+  // console.log(id,path);
+  changeId.value = id;
+  upTools.goPath(path);
+}
 
 </script>
 

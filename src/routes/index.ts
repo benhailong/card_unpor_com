@@ -55,19 +55,22 @@ router.beforeEach(async (to, from, next) => {
                 userinfo.value = null;
                 Message.error("登录超时");
                 next('/');
-                return
+                return;
             }
         }
-        // 根据用户所在的角色，找出所有的路由
-        await store.addRoutes(router)
-        // next({ ...to, replace: true });
-        console.log("准备好了？")
-        next();
+        let {routerList,menu} = storeToRefs(routerStore());
+        if(menu.value.length>0){
+            console.log(router)
+            next();
+        }else{
+            // 根据用户所在的角色，找出所有的路由
+            await store.addRoutes(router).then(res => {
+                next({ ...to, replace: true });
+            })
+        }
     }else{
         next();
     }
-
-
     // if (to.path == '/login') {
     //     // 登录或者注册才可以往下进行
     //     next();

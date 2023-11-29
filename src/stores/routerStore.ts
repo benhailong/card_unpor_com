@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
 import { RouteRecordRaw } from 'vue-router'
-let modules = import.meta.glob(["@/pages/system/router/*.vue"])
+let modules = import.meta.glob(["@/pages/system/router/*.vue","@/pages/system/port/*.vue","@/pages/system/role/*.vue"])
 
 import api from "@/http/api/users";
 
@@ -12,10 +12,22 @@ export const routerStore = defineStore({
             // 路由表
             routerList: [] as Array<RouteRecordRaw>,
             // 左侧导航菜单
-            menu:[]
+            menu:[],
+            changeId: 0
         }
     },
     getters:{},
+    // 开启数据缓存
+    persist: {
+        enabled: true,
+        strategies: [
+            {
+                key: 'routerList',
+                storage: localStorage,
+                paths: ['changeId']
+            }
+        ]
+    },
     actions:{
         // 添加动态路由，并同步到状态管理器中
         addRoutes(router: any) {
@@ -75,8 +87,6 @@ export const routerStore = defineStore({
                     // err ? instance.$message.error(err) : console.log(err)
                 })
             })
-
-
         }
     }
 })

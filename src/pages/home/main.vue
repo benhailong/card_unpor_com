@@ -12,7 +12,9 @@
             </a-layout-header>
             <a-layout-content style="height: calc(100vh - 54px);background-color: #ffffff;border-radius: 20px 20px 0 0 ;">
               <a-scrollbar style="height:calc(100vh - 54px);overflow: auto;">
-                <router-view></router-view>
+                <div style="padding: 20px">
+                  <router-view></router-view>
+                </div>
               </a-scrollbar>
             </a-layout-content>
           </a-layout>

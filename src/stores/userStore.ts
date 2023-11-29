@@ -5,7 +5,7 @@ export const userStore = defineStore({
     state:()=>{
         return {
             userinfo: null,
-            startTime: ''  // token 存储开始时间
+            startTime: '',  // token 存储开始时间
         }
     },
     getters:{

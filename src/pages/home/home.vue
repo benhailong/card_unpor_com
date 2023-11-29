@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <div style="padding: 20px">
-    <div style="height: 2000px">2222222</div>
-    <div>22222</div>
+  <div class="list-top">
+    <a-breadcrumb>
+      <a-breadcrumb-item>首页</a-breadcrumb-item>
+      <a-breadcrumb-item>数据中心</a-breadcrumb-item>
+    </a-breadcrumb>
   </div>
 </template>
 

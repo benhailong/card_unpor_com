@@ -16,7 +16,6 @@ upTools.goPath = (path: string):void=> {
     window.location.href = upTools.check(path,"url")? path : "/#"+path;
 }
 
-
 upTools.check =  (e: string, type:string):boolean => {
     var str:string=e;
     var Expression:string = ""
