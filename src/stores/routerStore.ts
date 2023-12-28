@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
 import { RouteRecordRaw } from 'vue-router'
-let modules = import.meta.glob(["@/pages/system/router/*.vue","@/pages/system/port/*.vue","@/pages/system/role/*.vue"])
+let modules = import.meta.glob(["@/pages/*/*/*.vue"])
 
 import api from "@/http/api/users";
 

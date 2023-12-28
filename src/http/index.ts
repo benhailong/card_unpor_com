@@ -5,6 +5,10 @@ import captcha from './api/captcha.ts'
 import router from './api/router.ts'
 import port from './api/port.ts'
 import role from './api/role.ts'
+import config from './api/config.ts'
+import file from './api/file.ts'
+import vip from './api/vip.ts'
+import viptype from './api/viptype.ts'
 
 import axios from 'axios'
 
@@ -15,7 +19,10 @@ const api = {
     captcha,
     router,
     port,
-    role
+    role,
+    config,
+    file,
+    vip,viptype
 }
 export default {
     install(app:any) {

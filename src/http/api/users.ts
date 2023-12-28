@@ -59,6 +59,51 @@ const api = {
         console.log(res);
         return res;
     },
+
+    /**
+     * 分页查询用户列表
+     */
+    getAllByPage(data:Object) {
+        const res = http.post('/users/getAllByPage',data);
+        console.log(res);
+        return res;
+    },
+
+    /**
+     * 开通VIP权限的 提交方法
+     */
+    setVip(data:Object) {
+        const res = http.post('/users/setVip',data);
+        console.log(res);
+        return res;
+    },
+
+    /**
+     * 查询用户的所有权限
+     */
+    getVipByUserId(data:Object) {
+        const res = http.post('/users/getVipByUserId',data);
+        console.log(res);
+        return res;
+    },
+
+    /**
+     * 修改用户状态
+     */
+    setStatus(data:Object) {
+        const res = http.post('/users/setStatus',data);
+        console.log(res);
+        return res;
+    },
+
+    /**
+     * 更具ID获取用户基本信息
+     */
+    getInfoById(data:Object) {
+        const res = http.post('/users/getInfoById',data);
+        console.log(res);
+        return res;
+    }
 }
 
 

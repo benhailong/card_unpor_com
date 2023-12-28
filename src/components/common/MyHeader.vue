@@ -49,7 +49,7 @@ const loginout = () => {
           userinfo.value = null;
           startTime.value = "";
           // 退出登录，获取当前路径
-          upTools.goPath("/login");
+          upTools.goPath("/");
         }else{
           instance.$message.error(res.msg);
         }

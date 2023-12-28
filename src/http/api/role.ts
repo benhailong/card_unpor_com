@@ -79,6 +79,14 @@ const api = {
     savePortByRoleId(params:Object) {
         const res = http.post('/role/savePortByRoleId',params);
         return res;
+    },
+    /**
+     * 查询所有的角色列表-不分页
+     * @param id 主键
+     */
+    getAllNoPage() {
+        const res = http.post('/role/getAllNoPage');
+        return res;
     }
 }
 

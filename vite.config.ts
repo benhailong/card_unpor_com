@@ -18,7 +18,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/admin': {
-        target: 'https://card.unpor.com/', // api 位置
+        target: 'http://test.com/', // api 位置
         changeOrigin: true
       },
     }
