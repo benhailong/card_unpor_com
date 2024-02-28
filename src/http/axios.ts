@@ -2,6 +2,7 @@ import axios from "axios";
 import { Message } from '@arco-design/web-vue';
 import 'nprogress/nprogress.css';
 import upTools from "@/utils/upTools.ts";
+import router from '@/routes/index';
 
 // 不需要token的页面
 import noTokenApiUrl from "./noTokenApiUrl.json"
@@ -55,16 +56,20 @@ http.interceptors.request.use(async (config) => {
 // 返回响应数据拦截
 http.interceptors.response.use((res) => {
     const data = res.data;
-    // if(data.code=='10002'){
-    //     // 接口返回需要登录，也就是如果在user页面需要退到首页
-    //     const path = router.currentRoute._value.path;
-    //     if(path.indexOf("/user/") != -1){
-    //         // 包含
-    //         router.push({
-    //             path: '/',
-    //         })
-    //     }
-    // }
+    if(data.code=='10002'){
+        Message.error(data.msg);
+        // 接口返回需要登录，也就是如果在user页面需要退到首页
+        // const path = router.currentRoute._value.path;
+        router.push({
+            path: '/',
+        })
+        // if(path.indexOf("/user/") != -1){
+        //     // 包含
+        //     router.push({
+        //         path: '/',
+        //     })
+        // }
+    }
 
     // 状态码为 2xx 范围时都会调用该函数，处理响应数据
     // if (res.status === 200) {
