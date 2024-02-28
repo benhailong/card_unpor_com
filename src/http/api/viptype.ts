@@ -11,7 +11,7 @@ const api = {
      * 分页查询用户列表
      */
     getAllByPage(data:Object) {
-        const res = http.post('/viptype/getAllByPage',data);
+        const res = http.post('/vipType/getAllByPage',data);
         console.log(res);
         return res;
     },
@@ -20,7 +20,7 @@ const api = {
      * 新增
      */
     add(data:Object) {
-        const res = http.post('/viptype/add',data);
+        const res = http.post('/vipType/add',data);
         console.log(res);
         return res;
     },
@@ -29,7 +29,7 @@ const api = {
      * 根据ID查询详情
      */
     getInfoById(data:Object) {
-        const res = http.post('/viptype/getInfoById',data);
+        const res = http.post('/vipType/getInfoById',data);
         console.log(res);
         return res;
     },
@@ -38,7 +38,7 @@ const api = {
      * 删除
      */
     delete(data:Object) {
-        const res = http.post('/viptype/delete',data);
+        const res = http.post('/vipType/delete',data);
         console.log(res);
         return res;
     },
@@ -47,7 +47,7 @@ const api = {
      * 修改
      */
     update(data:Object) {
-        const res = http.post('/viptype/update',data);
+        const res = http.post('/vipType/update',data);
         console.log(res);
         return res;
     },
@@ -56,7 +56,7 @@ const api = {
      * 获取所有（登录即可）
      */
     getAll() {
-        const res = http.post('/viptype/getAll');
+        const res = http.post('/vipType/getAll');
         console.log(res);
         return res;
     }
